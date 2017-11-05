@@ -1,0 +1,40 @@
+{
+  "name": "node-backend-boilerplate",
+  "version": "0.0.1",
+  "description": "starting point for a NodeJS API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petr166/node-backend-boilerplate.git"
+  },
+  "author": "Petru Birzu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petr166/node-backend-boilerplate/issues"
+  },
+  "homepage": "https://github.com/petr166/node-backend-boilerplate#readme",
+  "dependencies": {
+    "bcryptjs": "2.4.x",
+    "bluebird": "3.5.x",
+    "body-parser": "1.18.x",
+    "cors": "2.8.x",
+    "email-validator": "1.1.x",
+    "express": "4.16.x",
+    "jsonwebtoken": "8.1.x",
+    "mongoose": "4.13.x",
+    "morgan": "1.9.x",
+    "passport": "0.4.x",
+    "passport-jwt": "3.0.x"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1"
+  }
+}
