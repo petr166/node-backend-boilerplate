@@ -43,7 +43,10 @@ UserSchema.statics.createUser = (data) => {
   return crypto.getHash(user.password)
     .then((hash) => {
       user.password = hash;
-      return user.save();
+      return user.save()
+        .then((savedUser) => {
+          return { ...savedUser._doc, password: undefined }; // eslint-disable-line
+        });
     });
 };
 
