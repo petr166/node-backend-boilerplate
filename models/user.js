@@ -53,9 +53,12 @@ UserSchema.statics.createUser = (data) => {
 UserSchema.statics.authenticate = (creds) => {
   return User.findOne({ username: creds.username }).lean()
     .then((user) => {
-      if (!user) return Promise.reject(new Error('User not found'));
+      const error = new Error('Wrong username or password');
+
+      if (!user) return Promise.reject(error);
       return crypto.compareHash(creds.password, user.password)
-        .then(() => {
+        .then((result) => {
+          if (!result) return Promise.reject(error);
           return { ...user, password: undefined };
         });
     });
